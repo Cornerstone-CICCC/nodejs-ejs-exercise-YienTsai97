@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1;
+    background-color: blueviolet;
+}
+
+menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
