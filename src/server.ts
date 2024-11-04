@@ -2,6 +2,8 @@
 import express, { Request, Response } from 'express'
 import path from 'path'
 import pageRouter from './routes/page.routes'
+import dotenv from 'dotenv'
+dotenv.config()
 
 //Create Server
 const app = express()
@@ -11,7 +13,10 @@ app.set('view engine', 'EJS')
 app.set('views', path.join(__dirname, '../src/views'))
 
 //Middleware
+app.use(express.json())
 app.use(express.static(path.join(__dirname, "public"))) // css
+app.use(express.urlencoded({ extended: true }))
+
 
 //Routes
 app.use('/', pageRouter)
